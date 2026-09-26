@@ -169,6 +169,45 @@ INNGEST_DEV=1
 
 ---
 
+## 🌐 Production Deployment Guide
+
+### Option 1: Deploying to Vercel (Recommended)
+
+1. **Import Repository to Vercel**:
+   - Go to [Vercel Dashboard](https://vercel.com/new) and click **Add New Project**.
+   - Import your GitHub repository: `https://github.com/Ramanand-tomar/Jobs-and-intenrship-Automation`.
+
+2. **Configure Environment Variables**:
+   In the Vercel project settings under **Environment Variables**, add:
+   ```env
+   NEXT_PUBLIC_SUPABASE_URL=https://huxjkjsngevssmdfmtml.supabase.co
+   NEXT_PUBLIC_SUPABASE_ANON_KEY=your-supabase-anon-key
+   SUPABASE_SERVICE_ROLE_KEY=your-supabase-service-role-key
+   GEMINI_API_KEY=your-gemini-api-key
+   TAVILY_API_KEY=your-tavily-api-key
+   BROWSERBASE_API_KEY=your-browserbase-api-key
+   BROWSERBASE_PROJECT_ID=your-browserbase-project-id
+   ```
+
+3. **Deploy & Sync Inngest Cloud Queue**:
+   - Click **Deploy**. Vercel will build and host your Next.js application.
+   - Once deployed, log in to [Inngest Cloud Dashboard](https://app.inngest.com/).
+   - Click **Apps** → **Sync New App** and enter your production endpoint:
+     `https://your-app-name.vercel.app/api/inngest`
+   - Inngest will automatically discover your background functions (`scan-job-form` & `submit-job-form`) and handle production event dispatching.
+
+---
+
+### Option 2: Deploying to Render
+
+1. Create a **New Web Service** on [Render](https://render.com).
+2. Connect your GitHub repository: `Ramanand-tomar/Jobs-and-intenrship-Automation`.
+3. Set **Build Command**: `npm install && npm run build`
+4. Set **Start Command**: `npm run start`
+5. Add your Environment Variables and click **Create Web Service**.
+
+---
+
 ## 📁 Repository Structure
 
 ```text
