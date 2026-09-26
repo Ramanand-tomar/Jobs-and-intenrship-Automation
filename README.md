@@ -59,8 +59,8 @@ It aggregates real-time job listings from major Applicant Tracking Systems (**Gr
 
 ---
 
-### 📊 Real-Time Application Kanban Tracker
-![Status Kanban Board](docs/images/status_kanban.png)
+### 📊 Real-Time Application Status Hub (Kanban Board)
+![Real-Time Application Status Hub Kanban Board](docs/images/kanban_status_hub.png)
 
 ---
 
